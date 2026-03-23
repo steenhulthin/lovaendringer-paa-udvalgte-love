@@ -84,7 +84,7 @@ st.info(
     "tjenesten."
 )
 
-with st.expander("Datakilder og antagelser", expanded=True):
+with st.expander("Datakilder og antagelser", expanded=False):
     for history in histories:
         sources = ", ".join(history["sources_used"]) if history["sources_used"] else "Ingen kilder fundet"
         seed_urls = "  \n".join(
@@ -109,5 +109,6 @@ else:
         column_config={
             "Dato": st.column_config.DateColumn("Dato", format="YYYY-MM-DD"),
             "Lov nr.": st.column_config.NumberColumn("Lov nr.", format="%d"),
+            "URL": st.column_config.LinkColumn("URL"),
         },
     )

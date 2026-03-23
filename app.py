@@ -73,7 +73,7 @@ chart = (
     .properties(height=480)
 )
 
-st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart, width="stretch")
 
 st.info(
     "Datagrundlaget kommer direkte fra officielle ELI-metadata hos "
@@ -104,7 +104,7 @@ if filtered_event_df.empty:
 else:
     st.dataframe(
         filtered_event_df,
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         column_config={
             "Dato": st.column_config.DateColumn("Dato", format="YYYY-MM-DD"),
